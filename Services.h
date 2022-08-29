@@ -1,4 +1,20 @@
 #pragma once
-class Services {
-};
+#include "People.h"
+#include "Check.h"
+#include "Product.h"
+#include "Color.h"
+#include <vector>
 
+
+namespace model {
+
+	class Services {
+	public:
+		void showList() {
+
+		}
+	private:
+		std::vector<People> listPeople;
+		
+	};
+}

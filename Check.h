@@ -2,48 +2,81 @@
 #include "People.h"
 #include "Services.h"
 #include "Product.h"
+#include "Color.h"
+#include <iostream>
 #include <string>
-class Check  {
-public:
-	Check(int numberCheck, int quantity, Product product, Color color, People people) {
-		numberCheck_ = numberCheck;
-		quantity_ = quantity;
-		product_ = product;
-		color_ = color;
-		people_ = people;
-	}
-	void setNumberCheck(int numberCheck) {
-		numberCheck_ = numberCheck;
-	}
+#include <list>
 
-	int getNumberCheck() {
-		return numberCheck_;
-	}
+namespace model {
 
-	void setQuantity(int quantity) {
-		quantity_ = quantity;
-	}
+	class Check : public Product, public Color, public People {
+	public:
+		Check() {
 
-	int getQuantity() {
-		return quantity_;
-	}
+		}
+		Check(int numberCheck, int quantity, Product product, Color color, People people) {
+			numberCheck_ = numberCheck;
+			quantity_ = quantity;
+			product_ = product;
+			color_ = color;
+			people_ = people;
+		}
+		void setNumberCheck(int numberCheck) {
+			numberCheck_ = numberCheck;
+		}
 
-	void setProduct(Product product) {
-		product_ = product;
-	}
+		int getNumberCheck() {
+			return numberCheck_;
+		}
 
-	void setColor(Color color) {
-		color_ = color;
-	}
+		void setQuantity(int quantity) {
+			quantity_ = quantity;
+		}
 
-	void setPeople(People people) {
-		people_ = people;
-	}
-private:
-	int numberCheck_;
-	int quantity_;
-	Product product_;
-	Color color_;
-	People people_;
-};
+		int getQuantity() {
+			return quantity_;
+		}
+
+		void setProduct(Product &product) {
+			product_ = product;
+		}
+
+		std::string getProduct() {
+			return Product::getNameProduct();
+		}
+
+		void setColor(Color &color) {
+			color_ = color;
+		}
+
+		std::string getColor() {
+			return Color::getNameColor();
+		}
+
+		void setPeople(People &people) {
+			people_ = people;
+		}
+
+		std::string getName() {
+			return People::getName();
+		}
+
+		void printCheck() {
+			std::cout << "Number: " << numberCheck_ << "  product: " << getProduct()
+				<< "  quantity: " << quantity_ <<"  color: " << getColor()
+				<< "  name: " << getName() << std::endl;
+		}
+
+		void printTest() {
+			std::cout << getProduct();
+		}
+
+	private:
+		int numberCheck_ = 0;
+		int quantity_ = 0;
+		Product product_;
+		Color color_;
+		People people_;
+	};
+}
 
