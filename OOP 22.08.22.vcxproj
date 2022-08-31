@@ -128,17 +128,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Check.cpp" />
-    <ClCompile Include="Color.cpp" />
+    <ClCompile Include="Position.cpp" />
     <ClCompile Include="Product.cpp" />
-    <ClCompile Include="Services.cpp" />
+    <ClCompile Include="Security.cpp" />
+    <ClCompile Include="Stock.cpp" />
     <ClCompile Include="OOP 22.08.22.cpp" />
     <ClCompile Include="People.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Check.h" />
-    <ClInclude Include="Color.h" />
+    <ClInclude Include="Position.h" />
     <ClInclude Include="Product.h" />
-    <ClInclude Include="Services.h" />
+    <ClInclude Include="Security.h" />
+    <ClInclude Include="Stock.h" />
     <ClInclude Include="People.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

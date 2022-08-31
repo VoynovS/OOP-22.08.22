@@ -1,5 +1,4 @@
 #pragma once
-#include "Color.h"
 #include <string>
 #include <iostream>
 namespace model {
@@ -7,34 +6,57 @@ namespace model {
 	class Product {
 	public:
 		Product() {
-
+			_color = "color_default";
+			_nameProduct = "name_default";
+			_priceOutput = 0;
+			_size = 0;
 		}
-		Product(int id, std::string nameProduct, Color color, int price) {
-			id_ = id;
-			nameProduct_ = nameProduct;
-			color_ = color;
-			price_ = price;
+		Product(std::string nameProduct, std::string color, int size, int priceOutput) {			
+			_nameProduct = nameProduct;			
+			_priceOutput = priceOutput;
+			_color = color;
+			_size = size;
 		}
 
 		void setNameProduct(std::string nameProduct) {
-			nameProduct_ = nameProduct;
+			_nameProduct = nameProduct;
 		}
 
 		std::string getNameProduct() {
-			return nameProduct_;
+			return _nameProduct;
 		}
 
-		std::ostream& operator<<(std::ostream& os) {
-			return os << Product::getNameProduct() << std::endl;
+		void setPriceOutput(int priceOutput) {
+			_priceOutput = priceOutput;
 		}
+
+		int getPriceOutput() {
+			return _priceOutput;
+		}
+
+		void setColor(std::string color) {
+			_color = color;
+		}
+
+		std::string getColor() {
+			return _color;
+		}
+
+		void setSize(int size) {
+			_size = size;
+		}
+
+		int getSize() {
+			return _size;
+		}
+
+		
 
 
 	private:
-
-		Color color_;
-		int id_ = 0;
-		std::string nameProduct_ = " ";
-		int price_ = 0;
-
+		std::string _color;		
+		std::string _nameProduct;
+		int _priceOutput;
+		int _size;
 	};
 }
